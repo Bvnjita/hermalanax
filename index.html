@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermalanax | Amigurumis Artesanales</title>
+    <link rel="icon" type="image/png" href="img/logo_whatsapp.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <meta property="og:title" content="Hermalanax | Amigurumis Mágicos">
+<meta property="og:description" content="Descubre nuestra colección de amigurumis hechos a mano con amor en Chile.">
+<meta property="og:image" content="https://tupaginaweb.com/img/banner.png"> <meta property="og:url" content="https://tupaginaweb.com">
+<meta property="og:type" content="website">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("R4KLAaLjUd35koB4v");
+       })();
+    </script>
+</head>
+
+<button id="btn-scroll-top" title="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<body>
+    <div id="preloader" class="preloader">
+    <div class="spinner-wool"></div>
+</div>
+
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Hermalanax</a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="index.html#evidencias">Historias</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="cart-btn" class="icon-btn" aria-label="Abrir carrito">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay">
+                <div class="container hero-content">
+                    <h1 data-aos="fade-up">Magia hecha a mano</h1>
+                    
+                    <p data-aos="fade-up" data-aos-delay="200">Amigurumis únicos tejidos con amor, paciencia y un toque de fantasía.</p>
+                    
+                    <a href="#tienda" class="btn-primary" data-aos="zoom-in" data-aos-delay="400">Ver Colección</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="filter-container" data-aos="fade-in">
+            <div class="search-wrapper">
+                <input type="text" id="buscador" placeholder="¿Qué amigurumi buscas hoy?">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+        </div>
+
+        <section id="tienda" class="section-padding">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-right">Nuestros Favoritos</h2>
+                <p class="section-subtitle" data-aos="fade-right" data-aos-delay="100">Los más amados por nuestros clientes.</p>
+                
+                <div id="destacados-grid" class="products-grid">
+                    </div>
+
+                <div style="text-align: center; margin-top: 3rem;" data-aos="fade-up">
+                    <a href="catalogo.html" class="btn-primary">Ver Catálogo Completo</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section section-padding">
+    <div class="container about-grid">
+        <div class="about-image" data-aos="fade-right">
+            <img src="img/foto-sobre-mi.jpg" alt="Paula Tejiendo">
+        </div>
+        <div class="about-text" data-aos="fade-left">
+            <span class="badge nuevo">Conóceme</span>
+            <h2 class="section-title" style="text-align: left;">Detrás de las agujas</h2>
+            <p>¡Hola! Soy Paula. Cada amigurumi que ves aquí nace en mi pequeño taller en Antuco. No son solo hilos; son horas de dedicación para crear un compañero que dure toda la vida.</p>
+            <p>Cuando eliges Hermalanax, apoyas el arte hecho a mano y te llevas un pedacito de mi corazón.</p>
+            <img src="img/sobre-mi-flores.jpg" alt="Firma" style="width: 150px; opacity: 0.6; margin-top: 1rem;">
+        </div>
+    </div>
+</section>
+
+        <section id="evidencias" class="section-padding bg-alt">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-down">Hogares Felices</h2>
+                <p class="section-subtitle" data-aos="fade-down">Lo que dicen quienes ya adoptaron un compañero.</p>
+                
+                <div class="testimonials-grid">
+                    <article class="testimonial-card" data-aos="fade-up">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Es más suave de lo que imaginaba. Mi hijo no suelta su zorrito ni para dormir. ¡Gracias por el detalle del empaque!"</p>
+                        <div class="author">
+                            <span class="name">Valentina M.</span>
+                            <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Pedí un diseño personalizado de mi perrito y quedó idéntico. Se nota el amor en cada puntada. Recomendadísimo."</p>
+                        <div class="author">
+                            <span class="name">Carlos R.</span>
+                            <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="testimonial-text">"La mejor tienda de amigurumis. Llegó súper rápido y huele muy rico la lana. Volveré a comprar para Navidad."</p>
+                        <div class="author">
+                            <span class="name">Fernanda L.</span>
+                            <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section-padding">
+            <div class="container contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2 class="section-title">¿Tienes una idea especial?</h2>
+                    <p>Hacemos pedidos personalizados. Cuéntanos qué personaje sueñas y lo tejemos para ti.</p>
+                    <ul class="contact-details">
+                        <li><i class="fa-solid fa-envelope"></i> paula.aracely03@gmail.com</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> +56 9 3701 0443</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Antuco, Chile</li>
+                    </ul>
+                </div>
+
+                <form id="form-contacto" class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <label for="nombre">Tu Nombre</label>
+                        <input type="text" id="nombre" name="user_name" placeholder="Ej: Ana Pérez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="user_email" placeholder="nombre@correo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Pedido</label>
+                        <select id="tipo" name="tipo_pedido">
+                            <option value="consulta">Consulta General</option>
+                            <option value="personalizado">Pedido Personalizado</option>
+                            <option value="mayorista">Compra Mayorista</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Cuéntanos tu idea</label>
+                        <textarea id="mensaje" name="message" rows="5" placeholder="Me gustaría un amigurumi de..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width" id="btn-enviar">
+                        Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <section class="section-padding bg-alt">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Preguntas Frecuentes</h2>
+        
+        <div class="faq-grid" style="max-width: 800px; margin: 0 auto;">
+            
+            <details class="faq-item" data-aos="fade-up">
+                <summary>¿Cuánto tiempo demoran los pedidos personalizados?</summary>
+                <p>Dependiendo de la complejidad, tardamos entre 5 a 10 días hábiles en tejer tu pedido con todo el amor del mundo.</p>
+            </details>
+
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <summary>¿Qué materiales utilizan?</summary>
+                <p>Usamos hilo de algodón 100% hipoalergénico y relleno sintético de alta calidad, seguro para bebés y niños.</p>
+            </details>
+
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <summary>¿Hacen envíos a regiones?</summary>
+                <p>¡Sí! Enviamos a todo Chile a través de Starken o Chilexpress (por pagar).</p>
+            </details>
+            
+        </div>
+    </div>
+</section>
+
+<section class="benefits-section">
+    <div class="container benefits-grid">
+        <div class="benefit-item" data-aos="zoom-in">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h3>100% Hecho a Mano</h3>
+            <p>Cada punto tejido con amor y dedicación.</p>
+        </div>
+        <div class="benefit-item" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fa-solid fa-shield-cat"></i> <h3>Materiales Seguros</h3>
+            <p>Algodón hipoalergénico ideal para bebés.</p>
+        </div>
+        <div class="benefit-item" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fa-solid fa-gift"></i>
+            <h3>Empaque de Regalo</h3>
+            <p>Listo para sorprender a quien más quieres.</p>
+        </div>
+        <div class="benefit-item" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Envíos a todo Chile</h3>
+            <p>Llegamos a la puerta de tu casa.</p>
+        </div>
+    </div>
+</section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Hermalanax. Hecho a mano en Chile.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/hermalanax" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@paulaaarcely" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <aside id="carrito-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h3>Tu Canasta</h3>
+        <button id="close-cart" class="close-btn">&times;</button>
+    </div>
+
+    <div class="shipping-progress">
+        <p id="progress-text">Te faltan <strong>$30.000</strong> para tu regalo 🎁</p>
+        <div class="progress-bar-bg">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="cart-body">
+        </div>
+
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>$0</span>
+        </div>
+        <button class="btn-primary full-width">Finalizar Compra</button>
+    </div>
+</aside>
+    
+    <div id="overlay" class="overlay"></div>
+
+    <div id="modal-preview" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal" class="modal-close-btn">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Vista Previa">
+                </div>
+                <div class="modal-details">
+                    <span id="modal-cat" class="modal-tag">Categoría</span>
+                    <h2 id="modal-title">Nombre del Producto</h2>
+                    <p id="modal-price" class="modal-price">$0</p>
+                    <p class="modal-desc">Tejido a mano con hilo de algodón 100% hipoalergénico. Perfecto para regalar o coleccionar.</p>
+                    <button id="modal-add-btn" class="btn-primary">
+                        Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+    <div class="modal-image">
+        <img id="modal-img" src="" alt="Vista Previa">
+    </div>
+    <div class="modal-details">
+        <div class="related-products">
+            <h4>También te podría gustar:</h4>
+            <div id="related-grid" class="related-grid"></div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/56937010443?text=Hola!%20Vengo%20de%20la%20web%20y%20tengo%20una%20duda..." class="btn-wsp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,   // Un poco más lento para que sea más elegante
+        once: true,      // La animación solo ocurre una vez
+        offset: 100      // Empieza a animar un poco antes
+      });
+    </script>
+
+    <script src="script.js"></script> 
+    
+</body>
+</html>

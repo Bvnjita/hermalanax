@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Hermalanax</title>
+    <link rel="icon" type="image/png" href="img/logo_whatsapp.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("R4KLAaLjUd35koB4v");
+       })();
+    </script>
+</head>
+
+<button id="btn-scroll-top" title="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<body>
+    <div id="preloader" class="preloader">
+    <div class="spinner-wool"></div>
+</div>
+    <div class="top-bar">
+    <p>🚚 Envíos a todo Chile | 🎁 <strong>Regalo sorpresa</strong> en compras sobre $30.000</p>
+</div>
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Hermalanax</a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html" class="active">Catálogo</a></li> 
+                    <li><a href="index.html#evidencias">Historias</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="cart-btn" class="icon-btn" aria-label="Abrir carrito">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main style="margin-top: 2rem;">
+        <section class="section-padding">
+            <div class="container">
+                <h1 class="section-title" data-aos="fade-down">Catálogo Completo</h1>
+                <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Explora toda nuestra colección de amigurumis.</p>
+
+                <div class="filter-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="search-wrapper">
+                        <input type="text" id="buscador" placeholder="¿Qué amigurumi buscas hoy?">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </div>
+                    
+                    <div class="category-filters" style="text-align:center; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;">
+                        <button class="btn-filter active" data-cat="todos">Todos</button>
+                        <button class="btn-filter" data-cat="llaveros">Llaveros</button>
+                        <button class="btn-filter" data-cat="animales">Animales</button>
+                        <button class="btn-filter" data-cat="plantas">Plantas</button>
+                        <button class="btn-filter" data-cat="accesorios">Accesorios</button>
+                        <button class="btn-filter" data-cat="fandom">Fandom</button>
+                        <button class="btn-filter" data-cat="deco">Decoración</button>
+                    </div>
+                </div>
+
+                <div id="catalogo-grid" class="products-grid">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Hermalanax. Hecho a mano en Chile.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/hermalanax" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@paulaaarcely" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <aside id="carrito-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h3>Tu Canasta</h3>
+        <button id="close-cart" class="close-btn">&times;</button>
+    </div>
+
+    <div class="shipping-progress">
+        <p id="progress-text">Te faltan <strong>$30.000</strong> para tu regalo 🎁</p>
+        <div class="progress-bar-bg">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="cart-body">
+        </div>
+
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>$0</span>
+        </div>
+        <button class="btn-primary full-width">Finalizar Compra</button>
+    </div>
+</aside>
+    
+    <div id="overlay" class="overlay"></div>
+
+    <div id="modal-preview" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal" class="modal-close-btn">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Vista Previa">
+                </div>
+                <div class="modal-details">
+                    <span id="modal-cat" class="modal-tag">Categoría</span>
+                    <h2 id="modal-title">Nombre del Producto</h2>
+                    <p id="modal-price" class="modal-price">$0</p>
+                    <p class="modal-desc">Tejido a mano con hilo de algodón 100% hipoalergénico. Perfecto para regalar o coleccionar.</p>
+                    <button id="modal-add-btn" class="btn-primary">
+                        Agregar al Carrito <i class="fa-solid fa-basket-shopping"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+    <div class="modal-image">
+        <img id="modal-img" src="" alt="Vista Previa">
+    </div>
+    <div class="modal-details">
+        <div class="related-products">
+            <h4>También te podría gustar:</h4>
+            <div id="related-grid" class="related-grid"></div>
+        </div>
+    </div>
+</div>          
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/56937010443?text=Hola!%20Vengo%20de%20la%20web%20y%20tengo%20una%20duda..." class="btn-wsp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,   // Ajustado a 800ms para que coincida con el index (más suave)
+        once: true,      
+        offset: 100      
+      });
+    </script>
+
+    <script src="script.js"></script> 
+    
+</body>
+</html>

@@ -1,0 +1,968 @@
+/* CURSOR PERSONALIZADO */
+/*body {
+    /* Usamos una imagen de una aguja o varita */
+    /*cursor: url('img/puntero.png'), auto; 
+}
+
+/* Cuando pasa sobre un botón o enlace, cambia al cursor de "mano" pero personalizado */
+/*a, button, .product-card, .btn-filter {
+    /*cursor: url('img/puntero_interaccion.png'), pointer;
+}
+
+/* =========================================
+   1. VARIABLES & RESET (Paleta Rústica)
+   ========================================= */
+:root {
+    /* Colores Tierra */
+    --color-bg-crema: #F5F1E8;      /* Fondo principal suave */
+    --color-bg-alt: #EAD7C4;        /* Fondo secundario (beige oscuro) */
+    --color-madera: #5C4033;        /* Texto principal y bordes */
+    --color-madera-oscuro: #3E2723; /* Títulos y énfasis */
+    --color-musgo: #6B8E23;         /* Acentos, botones hover */
+    --color-blanco: #FFFFFF;        /* Tarjetas */
+    
+    /* Tipografía */
+    --font-titulo: 'Lora', serif;
+    --font-cuerpo: 'Montserrat', sans-serif;
+    
+    /* Espaciado y Bordes */
+    --border-radius: 8px;
+    --shadow-suave: 0 4px 6px rgba(92, 64, 51, 0.1);
+    --shadow-hover: 0 10px 20px rgba(92, 64, 51, 0.2); /* Nueva sombra para animaciones */
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-cuerpo);
+    background-color: var(--color-bg-crema);
+    color: var(--color-madera);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Desplazamiento suave en toda la página */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titulo);
+    color: var(--color-madera-oscuro);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* Utilitarios */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section-padding { padding: 4rem 0; }
+.bg-alt { background-color: var(--color-bg-alt); }
+.full-width { width: 100%; text-align: center; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   2. BOTONES & ANIMACIONES (¡Nuevo!)
+   ========================================= */
+
+/* Botón Principal (Ver Colección, Enviar, Checkout) */
+.btn-primary {
+    background-color: var(--color-madera);
+    color: var(--color-bg-crema);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid var(--color-madera);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-musgo);
+    border-color: var(--color-musgo);
+    color: white;
+    transform: translateY(-3px); /* Efecto levitación */
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-primary:active { transform: translateY(-1px); }
+
+/* Botón Añadir (En tarjetas) */
+.btn-add {
+    background-color: transparent;
+    border: 1px solid var(--color-madera);
+    color: var(--color-madera);
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-cuerpo);
+    font-weight: 500;
+}
+
+.btn-add:hover {
+    background-color: var(--color-madera);
+    color: var(--color-bg-crema);
+    transform: scale(1.05); /* Crece un poquito */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Botones Filtro (Categorías) */
+.btn-filter {
+    background: transparent;
+    border: 1px solid var(--color-madera);
+    padding: 0.6rem 1.2rem;
+    margin: 0 5px 10px 5px; /* Margen extra abajo para móviles */
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-cuerpo);
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.btn-filter:hover {
+    background-color: rgba(92, 64, 51, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-filter.active {
+    background-color: var(--color-madera);
+    color: var(--color-bg-crema);
+    box-shadow: var(--shadow-suave);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   3. HEADER & NAV (Sticky)
+   ========================================= */
+.main-header {
+    background-color: rgba(245, 241, 232, 0.95);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    backdrop-filter: blur(5px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--color-madera-oscuro);
+    transition: transform 0.3s;
+}
+
+.logo:hover { transform: scale(1.02); }
+
+.main-nav ul { display: none; } /* Móvil oculto */
+
+@media (min-width: 768px) {
+    .main-nav ul { display: flex; gap: 2rem; }
+    
+    .main-nav a {
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 5px;
+    }
+
+    /* Animación de subrayado elegante */
+    .main-nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-musgo);
+        transition: width 0.3s ease;
+    }
+
+    .main-nav a:hover { color: var(--color-musgo); }
+    .main-nav a:hover::after { width: 100%; }
+}
+
+/* Icono Carrito */
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-madera);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+}
+.icon-btn:hover { transform: scale(1.1); color: var(--color-musgo); }
+
+.cart-count {
+    position: absolute;
+    top: -5px; right: -8px;
+    background-color: var(--color-musgo);
+    color: white;
+    font-size: 0.7rem;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero-section {
+    height: 80vh;
+    background-image: url('img/banner.png'); /* Placeholder */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(245, 241, 232, 0.75);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+/* =========================================
+   5. BUSCADOR & FILTROS
+   ========================================= */
+.filter-container {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 1.5rem auto; /* Margen abajo para separar de botones */
+}
+
+#buscador {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    border: 2px solid var(--color-bg-alt);
+    border-radius: 50px;
+    background-color: var(--color-blanco);
+    font-family: var(--font-cuerpo);
+    font-size: 1rem;
+    color: var(--color-madera);
+    transition: var(--transition);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+#buscador:focus {
+    outline: none;
+    border-color: var(--color-madera);
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(92, 64, 51, 0.15);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-madera);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* =========================================
+   6. GRID DE PRODUCTOS (Robusto & Responsive)
+   ========================================= */
+.products-grid {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+    grid-template-columns: 1fr; /* Móvil por defecto */
+}
+
+@media (min-width: 600px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+    .products-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.product-card {
+    background: var(--color-blanco);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-suave);
+    transition: var(--transition);
+    border: 1px solid rgba(92, 64, 51, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Card flota al subir */
+    box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+    height: 250px;
+    overflow: hidden; /* IMPORTANTE: Esto evita que la imagen se salga del cuadro al crecer */
+    border-radius: 15px;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* La magia de la suavidad */
+}
+
+/* Al pasar el mouse sobre la tarjeta, la imagen crece */
+.product-card:hover .card-image img {
+    transform: scale(1.1); /* Crece un 10% */
+}
+
+/* Zoom suave en la imagen al hacer hover en la card */
+.product-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-info { padding: 1.5rem; text-align: center; position: relative; z-index: 2; background: white;}
+.card-info h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.card-info .price {
+    color: var(--color-musgo);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* =========================================
+   7. CARRITO FLOTANTE
+   ========================================= */
+.cart-sidebar {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 100%; max-width: 400px; height: 100vh;
+    background-color: var(--color-blanco);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex; flex-direction: column;
+}
+
+.cart-sidebar.active { right: 0; }
+
+.cart-header {
+    padding: 1.5rem;
+    background-color: var(--color-bg-alt);
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.close-btn {
+    background: none; border: none; font-size: 2rem; cursor: pointer;
+    transition: transform 0.3s;
+}
+.close-btn:hover { transform: rotate(90deg) scale(1.2); color: red; }
+
+.cart-body { flex: 1; padding: 1.5rem; overflow-y: auto; }
+.cart-footer { padding: 1.5rem; border-top: 1px solid #eee; }
+
+.overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+    opacity: 0; visibility: hidden;
+    transition: var(--transition);
+    backdrop-filter: blur(2px);
+}
+
+/* =========================================
+   8. TESTIMONIOS
+   ========================================= */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-suave);
+    border: 1px solid rgba(92, 64, 51, 0.05);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover { transform: translateY(-5px); }
+
+.quote-icon { font-size: 2rem; color: var(--color-bg-alt); margin-bottom: 1rem; }
+.testimonial-text { font-style: italic; margin-bottom: 1.5rem; color: #555; }
+.author {
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 600; color: var(--color-madera-oscuro);
+}
+.stars { color: #FFD700; font-size: 0.8rem; }
+
+/* =========================================
+   9. CONTACTO & FORMULARIOS
+   ========================================= */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-info { text-align: center; }
+    .contact-details { justify-content: center; }
+}
+
+.contact-details { margin-top: 2rem; font-size: 1.1rem; }
+.contact-details li { margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+
+.contact-form .form-group { margin-bottom: 1.5rem; }
+
+.contact-form label {
+    display: block; margin-bottom: 0.5rem;
+    font-weight: 600; color: var(--color-madera);
+}
+
+.contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%; padding: 0.8rem;
+    border: 1px solid #ccc; border-radius: 8px;
+    font-family: var(--font-cuerpo);
+    background-color: var(--color-bg-crema);
+    transition: var(--transition);
+}
+
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+    outline: none;
+    border-color: var(--color-musgo);
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.1); /* Anillo suave verde */
+}
+
+/* =========================================
+   10. FOOTER
+   ========================================= */
+.main-footer {
+    background-color: var(--color-madera-oscuro);
+    color: var(--color-bg-crema);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.social-links { margin-top: 1rem; }
+.social-links a {
+    color: var(--color-bg-crema); font-size: 1.5rem;
+    margin: 0 10px; transition: all 0.3s; display: inline-block;
+}
+.social-links a:hover { color: var(--color-musgo); transform: scale(1.2); }
+
+/* =========================================
+   11. EXTRAS (Notificaciones)
+   ========================================= */
+@keyframes bump {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.5); color: var(--color-musgo); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.bump { animation: bump 0.3s ease-out; }
+
+.toast {
+    position: fixed; bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-madera-oscuro);
+    color: var(--color-bg-crema);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 3000;
+    opacity: 0; visibility: hidden;
+    transition: all 0.4s ease;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 10px;
+}
+
+.toast.mostrar { opacity: 1; visibility: visible; bottom: 50px; }
+
+/* =========================================
+   MODAL VISTA PREVIA (Quick View)
+   ========================================= */
+
+/* Fondo oscuro (Overlay) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    z-index: 4000; /* Por encima de todo, incluso del carrito */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px); /* Efecto borroso de fondo */
+}
+
+/* Estado activo del modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* La tarjeta blanca del modal */
+.modal-content {
+    background: var(--color-bg-crema);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transform: scale(0.7); /* Empieza pequeño */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
+    overflow: hidden;
+}
+
+/* Animación cuando se abre */
+.modal-overlay.active .modal-content {
+    transform: scale(1); /* Crece a tamaño normal */
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 2rem;
+    background: none; border: none;
+    color: var(--color-madera);
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s;
+}
+.modal-close-btn:hover { transform: rotate(90deg) scale(1.2); color: red; }
+
+/* Layout interno (Imagen izq - Texto der) */
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 400px;
+}
+
+.modal-details {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal-tag {
+    background: var(--color-bg-alt);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--color-madera-oscuro);
+}
+
+.modal-details h2 { font-size: 2rem; margin-bottom: 0.5rem; line-height: 1.2; }
+.modal-price { font-size: 1.5rem; color: var(--color-musgo); font-weight: bold; margin-bottom: 1.5rem; }
+.modal-desc { margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
+
+/* Responsive para celular */
+@media (max-width: 768px) {
+    .modal-body { grid-template-columns: 1fr; } /* Una columna */
+    .modal-image img { height: 250px; min-height: auto; }
+    .modal-details { padding: 1.5rem; }
+}
+
+/* Nuevo Botón "Ojito" para las cards */
+.btn-view {
+    background-color: var(--color-bg-crema);
+    border: 1px solid var(--color-bg-alt);
+    color: var(--color-madera);
+    width: 40px; height: 40px; /* Cuadrado */
+    border-radius: 50%; /* Círculo */
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex; align-items: center; justify-content: center;
+    margin-left: 10px; /* Separado del botón añadir */
+}
+
+.btn-view:hover {
+    background-color: var(--color-madera);
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-wsp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.btn-wsp:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* PRELOADER */
+.preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--color-bg-crema);
+    z-index: 9999; /* Encima de todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner-wool {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--color-bg-alt);
+    border-top: 5px solid var(--color-musgo); /* El color que gira */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* HEADER SCROLLED */
+.main-header {
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.main-header.scrolled {
+    padding: 0.5rem 0; /* Se hace más angosto */
+    background-color: rgba(245, 241, 232, 0.98); /* Más sólido */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra más fuerte */
+}
+
+.main-header.scrolled .logo {
+    font-size: 1.5rem; /* El logo se achica un poco */
+}
+
+.top-bar {
+    background-color: var(--color-musgo); /* Tu color verde */
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1002; /* Encima del header */
+}
+
+/* Ajuste para que el header sticky no tape la barra si la quieres fija */
+/* Opcional: Si quieres que la barra desaparezca al bajar, déjalo así */
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.faq-item summary {
+    padding: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-madera-oscuro);
+    list-style: none; /* Oculta la flecha por defecto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Flechita personalizada */
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--color-musgo);
+    transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg); /* Se convierte en una X */
+}
+
+.faq-item p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: #666;
+    line-height: 1.6;
+    margin-top: -10px; /* Un poco más pegado al título */
+}
+
+#btn-scroll-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* A la izquierda (porque WhatsApp está a la derecha) */
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-madera);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+    opacity: 0; /* Invisible al principio */
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+#btn-scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#btn-scroll-top:hover {
+    background-color: var(--color-musgo);
+    transform: translateY(-5px);
+}
+
+/* SCROLLBAR PERSONALIZADO */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-madera); /* Tu color café claro */
+    border-radius: 5px;
+    border: 2px solid #f1f1f1; /* Borde blanco para que se vea flotante */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-musgo); /* Cambia a verde al agarrarla */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px var(--color-bg-alt); /* Efecto marco desplazado */
+}
+
+@media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; text-align: center; }
+    .section-title { text-align: center !important; }
+    .about-image { margin-bottom: 2rem; }
+}
+
+.benefits-section {
+    background-color: #fff;
+    padding: 3rem 0;
+    border-top: 1px solid #eee;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivo automático */
+    gap: 2rem;
+    text-align: center;
+}
+
+.benefit-item i {
+    font-size: 2.5rem;
+    color: var(--color-musgo);
+    margin-bottom: 1rem;
+}
+
+.benefit-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-madera-oscuro);
+}
+
+.benefit-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* PRODUCTOS RELACIONADOS (Versión Grande) */
+.related-products {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #ddd;
+    width: 100%;
+}
+
+.related-products h4 {
+    font-size: 1rem; /* Un poco más grande */
+    color: var(--color-madera-oscuro);
+    margin-bottom: 1rem;
+    text-align: center; /* Título centrado */
+    font-family: 'Lora', serif;
+}
+
+.related-grid {
+    display: grid; /* Usamos Grid en vez de Flex */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 15px; /* Más espacio entre ellas */
+}
+
+.mini-card {
+    cursor: pointer;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.mini-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--color-musgo); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mini-card img { 
+    width: 100%; 
+    height: 100px; /* Mucho más altas (antes eran 60px) */
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 5px;
+}
+
+.mini-card h5 { /* Nombre del producto */
+    font-size: 0.8rem;
+    margin: 5px 0 2px 0;
+    color: #555;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.mini-card p { /* Precio */
+    font-size: 0.9rem; 
+    margin: 0; 
+    font-weight: bold; 
+    color: var(--color-musgo);
+}
+
+/* BARRA DE PROGRESO EN CARRITO */
+.shipping-progress {
+    padding: 15px 20px;
+    background-color: #fcfcfc;
+    border-bottom: 1px dashed #ddd;
+}
+
+.shipping-progress p {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    text-align: center;
+    color: var(--color-madera-oscuro);
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%; /* Empieza en 0 */
+    background: linear-gradient(90deg, var(--color-musgo), #a8e063);
+    border-radius: 10px;
+    transition: width 0.5s ease, background 0.5s ease;
+}

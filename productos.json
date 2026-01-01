@@ -1,0 +1,41 @@
+[
+  { "id": 1, "nombre": "Llavero Mariposa", "precio": 1500, "categoria": "llaveros", "imagen": "img/mariposa.jpg" },
+  { "id": 2, "nombre": "Llavero Margarita", "precio": 1500, "categoria": "llaveros", "imagen": "img/flor_amarilla_blanca.jpg" },
+  { "id": 3, "nombre": "Llavero Ajolote", "precio": 2000, "categoria": "llaveros", "imagen": "img/ajolote.jpg" },
+  { "id": 4, "nombre": "Llavero Corazón", "precio": 1000, "categoria": "llaveros", "imagen": "img/corazones.jpg" },
+  { "id": 5, "nombre": "Llavero Patita", "precio": 1500, "categoria": "llaveros", "imagen": "img/patitas.jpg" },
+  { "id": 6, "nombre": "Llavero Arcoíris", "precio": 1000, "categoria": "llaveros", "imagen": "img/arcoiris.jpg" },
+  { "id": 7, "nombre": "Llavero Cactus", "precio": 1500, "categoria": "llaveros", "imagen": "img/cactus.jpg" },
+  
+  { "id": 8, "nombre": "Medusa", "precio": 2000, "categoria": "animales", "imagen": "img/pulpo.jpg" },
+  { "id": 9, "nombre": "Ballenita", "precio": 1000, "categoria": "animales", "imagen": "img/ballenita.jpg" },
+  { "id": 10, "nombre": "Mini Pingüino", "precio": 1000, "categoria": "animales", "imagen": "img/pajarito.jpg" },
+  { "id": 11, "nombre": "Pingüino Grande", "precio": 6000, "categoria": "animales", "imagen": "img/pinguino_grande.jpg" },
+  { "id": 12, "nombre": "Vaquita", "precio": 15000, "categoria": "animales", "imagen": "img/vaquita.jpg" },
+  { "id": 33, "nombre": "Dinosaurios", "precio": 3000, "categoria": "animales", "imagen": "img/dinosaurios.jpg" },
+  { "id": 34, "nombre": "Pulpo", "precio": 3000, "categoria": "animales", "imagen": "img/pulpos.jpg" },
+  
+  { "id": 13, "nombre": "Girasol de Escritorio", "precio": 3500, "categoria": "plantas", "imagen": "img/girasol_peque.jpg" },
+  { "id": 14, "nombre": "Girasol Grande", "precio": 4000, "categoria": "plantas", "imagen": "img/girasol_grande.jpg" },
+  { "id": 15, "nombre": "Mini Honguitos", "precio": 1500, "categoria": "plantas", "imagen": "img/hongito.jpg" },
+  { "id": 16, "nombre": "Flor Turquesa", "precio": 2000, "categoria": "plantas", "imagen": "img/flor_llavero.jpg" },
+  { "id": 17, "nombre": "Flores Azules", "precio": 1500, "categoria": "plantas", "imagen": "img/flor_azul.jpg" },
+  
+  { "id": 18, "nombre": "Pinche Flor Amarilla", "precio": 1500, "categoria": "accesorios", "imagen": "img/flor_amarilla.jpg" },
+  { "id": 19, "nombre": "Pinche Flores Pequeñas", "precio": 1000, "categoria": "accesorios", "imagen": "img/pinche_flor.jpg" },
+  { "id": 20, "nombre": "Moño", "precio": 2500, "categoria": "accesorios", "imagen": "img/pinche_azul.jpg" },
+  { "id": 21, "nombre": "Moño Amarillo", "precio": 1000, "categoria": "accesorios", "imagen": "img/moño_amarillo.jpg" },
+  
+  { "id": 22, "nombre": "Flor de Fiona", "precio": 10000, "categoria": "fandom", "imagen": "img/flor_fiona.jpg" },
+  { "id": 23, "nombre": "Chimmy (BT21)", "precio": 4000, "categoria": "fandom", "imagen": "img/perrito.jpg" },
+  { "id": 24, "nombre": "Fruta Ope Ope no Mi", "precio": 7000, "categoria": "fandom", "imagen": "img/ope_ope_no_mi.jpg" },
+  { "id": 25, "nombre": "Sombrero Luffy Pequeño", "precio": 2500, "categoria": "fandom", "imagen": "img/sombrero_luffy.jpg" },
+  { "id": 32, "nombre": "Arthur Morgan", "precio": 10000, "categoria": "fandom", "imagen": "img/arthur.jpg" },
+  
+  { "id": 26, "nombre": "Amigurumi Helado", "precio": 2000, "categoria": "deco", "imagen": "img/helado.jpg" },
+  { "id": 27, "nombre": "Diente", "precio": 3500, "categoria": "deco", "imagen": "img/diente.jpg" },
+  { "id": 28, "nombre": "Recuerdo Bautizo/BabyShower", "precio": 300, "categoria": "deco", "imagen": "img/bautizo_babyshower.jpg" },
+  { "id": 29, "nombre": "Amigurumi Sol", "precio": 2000, "categoria": "deco", "imagen": "img/sol.jpg" },
+  { "id": 30, "nombre": "Mini Calabaza", "precio": 1500, "categoria": "deco", "imagen": "img/calabaza.jpg" },
+  { "id": 31, "nombre": "Fosforero con Imán", "precio": 6000, "categoria": "deco", "imagen": "img/sombreros.jpg" }
+]
